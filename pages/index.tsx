@@ -13,6 +13,7 @@ import { FaTiktok, FaReact, FaNodeJs } from "react-icons/fa";
 import { SiTypescript } from "react-icons/si";
 import { IoLogoJavascript } from "react-icons/io";
 import Image from "next/image";
+import { Project } from "../components";
 
 export default function Home() {
   const { scrollY } = useViewportScroll();
@@ -112,10 +113,10 @@ export default function Home() {
             </ul>
           </div>
         </motion.section>
-        {/* {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
+        {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
           const top = mainRef.current?.getBoundingClientRect().top;
           return <Project {...{ index, scrollY, top }} key={item} />;
-        })} */}
+        })}
       </main>
     </div>
   );

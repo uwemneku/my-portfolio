@@ -11,11 +11,11 @@ const size = 500;
 const Projects = ({ index, scrollY, top }: Props) => {
   const isEven = index % 2 === 0;
   const inputArray = [
-    (index - 1) * size,
-    index * size - 200,
-    index * size,
-    index * size + 250,
-    (index + 1) * size,
+    (index - 1) * size + 800,
+    index * size - 200 + 800,
+    index * size + 800,
+    index * size + 250 + 800,
+    (index + 1) * size + 800,
   ]; //-200 and + 250 is to make the project have the same size in the middle of the screen
 
   const opacity = useTransform(scrollY, inputArray, [0, 1, 1, 1, 0], {
