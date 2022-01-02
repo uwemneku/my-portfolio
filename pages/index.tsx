@@ -112,11 +112,18 @@ export default function Home() {
               ))}
             </ul>
           </div>
+          <section className="mt-12">
+            <h2 className="font-semibold text-lg md:text-3xl text-white">
+              Projects
+            </h2>
+            <div className="flex flex-wrap md:justify-start justify-center gap-16 p-3">
+              {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
+                const top = mainRef.current?.getBoundingClientRect().top;
+                return <Project {...{ index, scrollY, top }} key={item} />;
+              })}
+            </div>
+          </section>
         </motion.section>
-        {[1, 2, 3, 4, 5, 6, 7, 8].map((item, index) => {
-          const top = mainRef.current?.getBoundingClientRect().top;
-          return <Project {...{ index, scrollY, top }} key={item} />;
-        })}
       </main>
     </div>
   );
