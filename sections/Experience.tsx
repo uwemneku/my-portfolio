@@ -15,7 +15,6 @@ function Experience() {
           const distanceY = Math.abs(e.clientY - centerY);
           console.log(rect.left - e.clientX, distanceY);
         }}
-        className="bg-red-500"
       >
         <div className="p-5 bg-slate-800  w-full drop-shadow-md shadow-md text-white rounded-md grid md:grid-cols-2 gap-10">
           {jobs.map((data, index) => (

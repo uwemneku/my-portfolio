@@ -2,11 +2,6 @@ import React, { useRef } from "react";
 import Head from "next/head";
 import { motion, useViewportScroll, Variants } from "framer-motion";
 import { useResponsiveBreakpoint } from "../hooks";
-import {
-  AiFillGithub,
-  AiFillLinkedin,
-  AiFillTwitterCircle,
-} from "react-icons/ai";
 import { FaTiktok } from "react-icons/fa";
 import { Avatar, Project } from "../components";
 import TechStack from "../sections/TechStack";
