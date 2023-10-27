@@ -1,1 +1,1 @@
-export {default as useResponsiveBreakpoint} from './useResponsiveBreakpoint';
+export { default as useResponsiveBreakpoint } from "./useResponsiveBreakpoint";
