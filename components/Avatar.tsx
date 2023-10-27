@@ -1,12 +1,14 @@
 import Image from "next/image";
 import React from "react";
-import { motion, useScroll, useTransform } from "framer-motion";
+import { motion, useScroll, useSpring, useTransform } from "framer-motion";
 
 function Avatar() {
   const { scrollYProgress } = useScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5], {
-    clamp: true,
-  });
+  const scale = useSpring(
+    useTransform(scrollYProgress, [0, 1], [1, 0.2], {
+      clamp: true,
+    })
+  );
 
   return (
     <motion.figure style={{ scale }} className="relative w-24 h-24">
