@@ -1,44 +1,37 @@
 import React, { useRef } from "react";
 import Head from "next/head";
-import { motion, useViewportScroll, Variants } from "framer-motion";
-import { useResponsiveBreakpoint } from "../hooks";
-import { FaTiktok } from "react-icons/fa";
-import { Avatar, Project } from "../components";
+import { motion } from "framer-motion";
+import { Avatar } from "../components";
 import TechStack from "../sections/TechStack";
 import Experience from "../sections/Experience";
 import SocialMedia from "../sections/SocialMedia";
 
 export default function Home() {
-  const { scrollY } = useViewportScroll();
   const mainRef = useRef<HTMLElement>(null);
-  const imageSize = useResponsiveBreakpoint() === "mobile" ? 100 : 150;
   return (
     <div>
       <Head>
         <title>Uwem Israel</title>
       </Head>
-      <main
-        ref={mainRef}
-        className="max-w-3xl ml-auto mr-auto overflow-x-hidden p-3 px-6 my-20"
-      >
+      <main ref={mainRef} className="max-w-3xl ml-auto mr-auto  p-3 px-6 my-20">
         <section className="">
           <motion.div
             initial={{
               scale: 2,
               translateX: 100,
               opacity: 0,
-              position: "absolute",
             }}
             animate={{
               scale: 1,
               translateX: 0,
               opacity: 1,
-              transitionEnd: { position: "relative" },
             }}
             transition={{ delay: 0.3, easings: ["easeInOut", "easeInOut"] }}
             className="gap-5 grid"
           >
-            <Avatar />
+            <div className="relative">
+              <Avatar />
+            </div>
             <p className="font-bold text-3xl md:text-4xl text-white">
               {"Hi, I'm Israel"}
             </p>

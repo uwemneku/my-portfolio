@@ -1,12 +1,13 @@
 import Image from "next/image";
 import React from "react";
-import { useResponsiveBreakpoint } from "../hooks";
-import { motion, useTransform, useViewportScroll } from "framer-motion";
+import { motion, useScroll, useTransform } from "framer-motion";
 
 function Avatar() {
-  const imageSize = useResponsiveBreakpoint() === "mobile" ? 50 : 75;
-  const { scrollYProgress } = useViewportScroll();
-  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5]);
+  const { scrollYProgress } = useScroll();
+  const scale = useTransform(scrollYProgress, [0, 1], [1, 0.5], {
+    clamp: true,
+  });
+
   return (
     <motion.figure style={{ scale }} className="relative w-24 h-24">
       <Image
